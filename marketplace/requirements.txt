@@ -1,0 +1,5 @@
+fastapi
+grpcio-tools ~= 1.30
+Jinja2 ~= 2.11
+pytest ~= 5.4
+uvicorn

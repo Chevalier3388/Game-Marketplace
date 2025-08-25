@@ -1,0 +1,14 @@
+<!-- homepage.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Online Games For You</title>
+</head>
+<body>
+    <h1>CLASSIC games you may like</h1>
+    <ul>
+    {% for game in recommendations %}
+        <li>{{ game.title }}</li>
+    {% endfor %}
+    </ul>
+</body>

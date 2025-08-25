@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+
+enum GameCategory {
+    CLASSIC = 0;
+    CARD_GAMES = 1;
+    DUELING = 2;
+    COOPERATIVE = 3;
+    STRATEGIC = 4;
+    ECONOMIC = 5;
+    ROLE_PLAYING_NRI = 6;
+    CCG = 7;
+    ADVENTURE = 8;
+    DETECTIVE = 9;
+    FOR_PARTY = 10;
+    FOR_CHILDREN = 11;
+    HARDCORE = 12;
+
+}
+
+
+message RecommendationRequest {
+    int32 user_id = 1;
+    GameCategory category = 2;
+    int32 max_results = 3;
+}
+
+
+message GameRecommendation {
+    int32 id = 1;
+    string title = 2;
+}
+
+
+message RecommendationResponse {
+    repeated GameRecommendation recommendations = 1;
+}
+
+
+service Recommendations {
+    rpc Recommend (RecommendationRequest) returns (RecommendationResponse);
+}
